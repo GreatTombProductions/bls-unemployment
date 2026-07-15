@@ -1,0 +1,1 @@
+{"name": "Delaware", "abbr": "DE", "counties": 3, "state_rate": null, "latest_month": null, "county_data": [{"n": "New Castle", "f": "10003", "r": 4.1, "y": -0.1, "p": 578592}, {"n": "Sussex", "f": "10005", "r": 4.2, "y": 0.1, "p": 263509}, {"n": "Kent", "f": "10001", "r": 4.6, "y": 0.0, "p": 189789}]}

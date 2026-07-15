@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>County Unemployment Check — BLS Local Area Unemployment Statistics</title>
+<meta name="description" content="Search county-level unemployment rates across the US. Monthly data from the Bureau of Labor Statistics. Compare counties to state and national averages.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>County Unemployment Check</h1>
+    <p class="subtitle">Monthly unemployment rates for US counties · Bureau of Labor Statistics</p>
+    <p class="coverage-note">Currently 225 counties across 11 states. Expanding to all 3,143 counties — <a href="#about">learn more</a>.</p>
+</header>
+
+<nav class="tabs">
+    <button class="tab active" data-tab="name">By Name</button>
+    <button class="tab" data-tab="state">By State</button>
+    <button class="tab" data-tab="nearby">Near Me</button>
+</nav>
+
+<main>
+    <!-- Name Search -->
+    <section id="name-search" class="search-panel active">
+        <input type="text" id="search-input" placeholder="Enter a county name..." autocomplete="off">
+        <div id="search-results" class="results-list"></div>
+    </section>
+
+    <!-- State Browse -->
+    <section id="state-search" class="search-panel">
+        <select id="state-select">
+            <option value="">Select a state...</option>
+        </select>
+        <div id="state-results" class="results-list"></div>
+    </section>
+
+    <!-- Nearby Search -->
+    <section id="nearby-search" class="search-panel">
+        <div class="nearby-inputs">
+            <input type="text" id="addr-input" placeholder="Enter an address or zip code...">
+            <select id="radius-select">
+                <option value="25">25 mi</option>
+                <option value="50" selected>50 mi</option>
+                <option value="75">75 mi</option>
+                <option value="100">100 mi</option>
+            </select>
+            <button id="nearby-btn">Search</button>
+        </div>
+        <div id="nearby-results" class="results-list"></div>
+    </section>
+
+    <!-- Intro -->
+    <div id="intro">
+        <div id="intro-stats"></div>
+    </div>
+
+    <!-- County Detail -->
+    <div id="detail" class="hidden">
+        <button id="back-btn">← Back to results</button>
+        <div id="detail-content"></div>
+    </div>
+</main>
+
+<footer id="about">
+    <p>Data: <a href="https://www.bls.gov/lau/">BLS Local Area Unemployment Statistics (LAUS)</a> via public API.
+    Monthly unemployment rates, not seasonally adjusted. Rates shown as percentages.
+    "Preliminary" indicates the most recent month's data is subject to revision.</p>
+    <p>Currently covering 225 counties (AL, AK, AZ, AR, CA, CO, CT, DE, DC, FL, GA).
+    Expanding to all 3,143 US counties pending BLS API key registration.
+    <a href="https://github.com/GreatTombProductions/bls-unemployment">Source on GitHub</a>.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
